@@ -8,7 +8,8 @@ const app = express();
 const PORT = process.env.PORT || 10000;
 const MODEL = process.env.OPENAI_MODEL || "gpt-4.1-mini";
 app.use(express.json({ limit: "30kb" }));
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(__dirname));
+
 
 const rateWindowMs = 60_000;
 const maxRequestsPerWindow = 12;
